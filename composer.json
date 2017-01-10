@@ -7,6 +7,11 @@
         "dekalee/adback-analytics": "~1"
     },
     "license": "Apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "Dekalee\\AdbackAnalyticsBundle\\": "src/AdbackAnalyticsBundle"
+        }
+    },
     "authors": [
         {
             "name": "Nicolas Thal",
