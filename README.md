@@ -35,6 +35,12 @@ In the `config.yml` file add your token:
 Usage
 -----
 
+To update your local cache, run the command:
+
+```php
+    php app/console dekalee:adback-anayltics:refresh-tag
+```
+
 To display the tag in your page, you can add the twig command:
 
 ```twig
