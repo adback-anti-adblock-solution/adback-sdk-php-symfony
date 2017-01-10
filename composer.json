@@ -1,0 +1,16 @@
+{
+    "name": "dekalee/adback-analytics-bundle",
+    "description": "A bundle to use the AdBack Analytics lib",
+    "type": "bundle",
+    "require": {
+        "symfony/framework-bundle": "~2.3|~3.0",
+        "dekalee/adback-analytics": "~1"
+    },
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Nicolas Thal",
+            "email": "nico.th4l@gmail.com"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+parameters:
+    dekalee_adback_analytics.generator.analytics.class: Dekalee\AdbackAnalytics\Generator\AnalyticsScriptGenerator
+    dekalee_adback_analytics.generator.message.class: Dekalee\AdbackAnalytics\Generator\MessageScriptGenerator
+
+services:
+    dekalee_adback_analytics.generator.analytics:
+        class: '%dekalee_adback_analytics.generator.analytics.class%'
+        arguments:
+            - '@dekalee_adback_analytics.script_cache'
+    dekalee_adback_analytics.generator.message:
+        class: '%dekalee_adback_analytics.generator.message.class%'
+        arguments:
+            - '@dekalee_adback_analytics.script_cache'
