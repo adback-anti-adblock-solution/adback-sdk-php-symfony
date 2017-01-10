@@ -29,7 +29,7 @@ In the `config.yml` file add your token:
 ```yaml
     dekalee_adback_analytics:
         access_token: your-token
-        cache_service: adback_cli.redis.tag
+        cache_service: your.redis.service
 ```
 
 Usage
