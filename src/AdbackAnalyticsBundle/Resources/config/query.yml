@@ -9,7 +9,6 @@ services:
         arguments:
             - '@dekalee_adback_analytics.api_client'
             - '@dekalee_adback_analytics.script_cache'
-            - '@serializer'
             - '%dekalee_adback_analytics.api.access_token%'
             - '%dekalee_adback_analytics.api.api_url%'
             - '%dekalee_adback_analytics.api.script_url%'
