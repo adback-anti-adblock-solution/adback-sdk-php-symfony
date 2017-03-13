@@ -2,12 +2,10 @@ parameters:
     dekalee_adback_analytics.query.script_url.class: Dekalee\AdbackAnalytics\Query\ScriptUrlQuery
 
 services:
-    dekalee_adback_analytics.api_client:
-        class: GuzzleHttp\Client
     dekalee_adback_analytics.query.script_url:
         class: '%dekalee_adback_analytics.query.script_url.class%'
         arguments:
-            - '@dekalee_adback_analytics.api_client'
+            - '@dekalee_adback_analytics.client'
             - '@dekalee_adback_analytics.script_cache'
             - '%dekalee_adback_analytics.api.access_token%'
             - '%dekalee_adback_analytics.api.api_url%'

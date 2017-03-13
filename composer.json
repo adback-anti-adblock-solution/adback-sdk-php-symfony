@@ -4,7 +4,7 @@
     "type": "bundle",
     "require": {
         "symfony/framework-bundle": "~2.3|~3.0",
-        "dekalee/adback-analytics": "~1.1"
+        "dekalee/adback-analytics": "~1.2"
     },
     "license": "Apache-2.0",
     "autoload": {
