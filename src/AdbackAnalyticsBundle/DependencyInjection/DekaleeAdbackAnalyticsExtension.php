@@ -30,6 +30,7 @@ class DekaleeAdbackAnalyticsExtension extends Extension
         }
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('client.yml');
         $loader->load('query.yml');
         $loader->load('script_cache.yml');
         $loader->load('generator.yml');
