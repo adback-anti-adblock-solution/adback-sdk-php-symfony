@@ -7,5 +7,6 @@ services:
         arguments:
             - '@dekalee_adback_analytics.generator.analytics'
             - '@dekalee_adback_analytics.generator.message'
+            - '@dekalee_adback_autopromo_banner.generator.message'
         tags:
             - { name: twig.extension }
