@@ -4,6 +4,7 @@ namespace Dekalee\AdbackAnalyticsBundle\Twig;
 
 use Dekalee\AdbackAnalytics\Generator\AnalyticsScriptGenerator;
 use Dekalee\AdbackAnalytics\Generator\MessageScriptGenerator;
+use Dekalee\AdbackAnalytics\Generator\AutopromoBannerScriptGenerator;
 
 /**
  * Class ScriptExtension
@@ -12,15 +13,18 @@ class ScriptExtension extends \Twig_Extension
 {
     protected $analyticsGenerator;
     protected $messageGenerator;
+    protected $autopromoBannerGenerator;
 
     /**
-     * @param AnalyticsScriptGenerator $analyticsScriptGenerator
-     * @param MessageScriptGenerator   $messageScriptGenerator
+     * @param AnalyticsScriptGenerator          $analyticsScriptGenerator
+     * @param MessageScriptGenerator            $messageScriptGenerator
+     * @param AutopromoBannerScriptGenerator    $autopromoBannerScriptGenerator
      */
-    public function __construct(AnalyticsScriptGenerator $analyticsScriptGenerator, MessageScriptGenerator $messageScriptGenerator)
+    public function __construct(AnalyticsScriptGenerator $analyticsScriptGenerator, MessageScriptGenerator $messageScriptGenerator, AutopromoBannerScriptGenerator $autopromoBannerScriptGenerator)
     {
         $this->analyticsGenerator = $analyticsScriptGenerator;
         $this->messageGenerator = $messageScriptGenerator;
+        $this->autopromoBannerGenerator = $autopromoBannerScriptGenerator;
     }
 
     /**
@@ -35,12 +39,23 @@ class ScriptExtension extends \Twig_Extension
     }
 
     /**
+     * @param int $id
+     *
+     * @return string
+     */
+    public function generateAutopromoBannerScript($id)
+    {
+        return sprintf('<script>%s</script>', $this->autopromoBannerGenerator->generate($id));
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getFunctions()
     {
         return [
             new \Twig_SimpleFunction('adback_generate_scripts', [$this, 'generateScripts'], ['is_safe' => ['html']]),
+            new \Twig_SimpleFunction('adback_generate_autopromo_banner_script', [$this, 'generateAutopromoBannerScript'], ['is_safe' => ['html']]),
         ];
     }
 }
