@@ -39,13 +39,11 @@ class ScriptExtension extends \Twig_Extension
     }
 
     /**
-     * @param int $id
-     *
      * @return string
      */
-    public function generateAutopromoBannerScript($id)
+    public function generateAutopromoBannerScript()
     {
-        return sprintf('<script>%s</script>', $this->autopromoBannerGenerator->generate($id));
+        return sprintf('<script>%s</script>', $this->autopromoBannerGenerator->generate());
     }
 
     /**
