@@ -16,7 +16,8 @@
         }
     },
     "suggest": {
-        "doctrine/orm": "Allows you to use doctrine to store the cache"
+        "doctrine/orm": "Allows you to use doctrine to store the cache",
+        "symfony/config": "Allows you tu use the file cache"
     },
     "authors": [
         {
