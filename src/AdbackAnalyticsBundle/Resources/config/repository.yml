@@ -1,0 +1,10 @@
+parameters:
+    dekalee_adback_analytics.repository.api_cache.class: Dekalee\AdbackAnalyticsBundle\Repository\ApiCacheRepository
+    dekalee_adback_analytics.entity.api_cache.class: Dekalee\AdbackAnalyticsBundle\Entity\ApiCache
+
+services:
+    dekalee_adback_analytics.repository.api_cache:
+        class: '%dekalee_adback_analytics.repository.api_cache.class%'
+        factory: ['@dekalee_adback_analytics.orm.entity_manager', getRepository]
+        arguments:
+            - '%dekalee_adback_analytics.entity.api_cache.class%'

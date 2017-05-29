@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * ApiCache
  *
- * @ORM\Table(name="api_cache")
+ * @ORM\Table(name="adback_analytics_api_cache")
  * @ORM\Entity(repositoryClass="Dekalee\AdbackAnalyticsBundle\Repository\ApiCacheRepository")
  */
 class ApiCache

@@ -20,11 +20,24 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('dekalee_adback_analytics');
 
+        $supportedCacheTypes = ['redis', 'doctrine'];
+
         $rootNode->children()
             ->scalarNode('access_token')->isRequired()->end()
             ->scalarNode('api_url')->defaultValue('https://adback.co/api')->end()
             ->scalarNode('script_url')->defaultValue('script/me')->end()
+            ->scalarNode('cache_type')
+                ->validate()
+                    ->ifNotInArray($supportedCacheTypes)
+                    ->thenInvalid('The driver %s is not supported. Please choose one of '.json_encode($supportedCacheTypes))
+                ->end()
+                ->cannotBeOverwritten()
+                ->isRequired()
+                ->cannotBeEmpty()
+                ->defaultValue('redis')
+            ->end()
             ->scalarNode('cache_service')->defaultValue('redis')->end()
+            ->scalarNode('entity_manager')->defaultValue('doctrine.orm.entity_manager')->end()
         ->end();
 
         return $treeBuilder;

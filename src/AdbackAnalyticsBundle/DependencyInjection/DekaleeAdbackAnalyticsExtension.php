@@ -28,11 +28,17 @@ class DekaleeAdbackAnalyticsExtension extends Extension
         if (array_key_exists('cache_service', $config)) {
             $container->setAlias('dekalee_adback_analytics.cache', $config['cache_service']);
         }
+        if (array_key_exists('entity_manager', $config)) {
+            $container->setAlias('dekalee_adback_analytics.orm.entity_manager', $config['entity_manager']);
+        }
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('client.yml');
         $loader->load('query.yml');
-        $loader->load('script_cache.yml');
+        if ('doctrine' === $config['cache_type']) {
+            $loader->load('repository.yml');
+        }
+        $loader->load($config['cache_type'] . '_script_cache.yml');
         $loader->load('generator.yml');
         $loader->load('twig.yml');
     }
