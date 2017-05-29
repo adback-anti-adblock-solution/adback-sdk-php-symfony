@@ -1,5 +1,5 @@
 parameters:
-    dekalee_adback_analytics.doctrine_script_cache.class: Dekalee\AdbackAnalytics\Driver\DoctrineScriptCache
+    dekalee_adback_analytics.doctrine_script_cache.class: Dekalee\AdbackAnalyticsBundle\Driver\DoctrineScriptCache
 
 services:
     dekalee_adback_analytics.script_cache:

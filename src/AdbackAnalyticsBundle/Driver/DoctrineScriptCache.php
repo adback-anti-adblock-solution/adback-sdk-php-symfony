@@ -52,7 +52,7 @@ class DoctrineScriptCache extends SqlScriptCache implements ScriptCacheInterface
 
         if (!$element instanceof ApiCache) {
             $element = new ApiCache();
-            $element->setKey($value);
+            $element->setKey($key);
             $this->entityManager->persist($element);
         }
 
