@@ -4,13 +4,20 @@
     "type": "bundle",
     "require": {
         "symfony/framework-bundle": "~2.3|~3.0",
-        "dekalee/adback-analytics": "~1.6"
+        "dekalee/adback-analytics": ">=1.9.1"
+    },
+    "require-dev": {
+        "doctrine/orm": "^2.5"
     },
     "license": "Apache-2.0",
     "autoload": {
         "psr-4": {
             "Dekalee\\AdbackAnalyticsBundle\\": "src/AdbackAnalyticsBundle"
         }
+    },
+    "suggest": {
+        "doctrine/orm": "Allows you to use doctrine to store the cache",
+        "symfony/config": "Allows you tu use the file cache"
     },
     "authors": [
         {
