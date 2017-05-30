@@ -75,5 +75,4 @@ class ConfigFileScriptCache extends SqlScriptCache implements ScriptCacheInterfa
 
         $this->cache->write(json_encode($content));
     }
-
 }

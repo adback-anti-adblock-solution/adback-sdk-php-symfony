@@ -36,9 +36,6 @@ class DekaleeAdbackAnalyticsExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('client.yml');
         $loader->load('query.yml');
-        if ('doctrine' === $cacheType) {
-            $loader->load('repository.yml');
-        }
         $loader->load($cacheType . '_script_cache.yml');
         $loader->load('generator.yml');
         $loader->load('twig.yml');
