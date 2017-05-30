@@ -5,7 +5,7 @@
     "require": {
         "symfony/framework-bundle": "~2.3|~3.0",
         "dekalee/adback-analytics": ">=1.9.1",
-        "twig/twig": "~2"
+        "twig/twig": "*"
     },
     "require-dev": {
         "doctrine/orm": "^2.5",
