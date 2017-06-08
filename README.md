@@ -11,4 +11,4 @@ This bundle will use the library to call the AdBack api.
 
 See [the AdBack website](http://adback.co) for more informations.
 
-Documentation available on [docs.adback.co](http://docs.adback.co/)
+Documentation available on [support.adback.co](http://support.adback.co/)
