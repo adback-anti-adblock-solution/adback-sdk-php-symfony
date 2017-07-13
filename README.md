@@ -1,4 +1,4 @@
-Adback/AnalyticsBundle
+Adback/ApiClientBundle
 ======================
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dekalee/adback-analytics-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dekalee/adback-analytics-bundle/?branch=master)
@@ -9,6 +9,6 @@ Adback/AnalyticsBundle
 
 This bundle will use the library to call the AdBack api.
 
-See [the AdBack website](http://adback.co) for more informations.
+See [the AdBack website](https://www.adback.co/) for more informations.
 
 Documentation available on [support.adback.co](http://support.adback.co/)

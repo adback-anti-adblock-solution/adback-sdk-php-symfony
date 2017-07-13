@@ -1,6 +1,0 @@
-parameters:
-    dekalee_adback_analytics.client.class: Dekalee\AdbackAnalytics\Client\Client
-
-services:
-    dekalee_adback_analytics.client:
-        class: '%dekalee_adback_analytics.client.class%'
