@@ -1,0 +1,6 @@
+parameters:
+    dekalee_adback_analytics.client.class: Adback\ApiClient\Client\Client
+
+services:
+    dekalee_adback_analytics.client:
+        class: '%dekalee_adback_analytics.client.class%'

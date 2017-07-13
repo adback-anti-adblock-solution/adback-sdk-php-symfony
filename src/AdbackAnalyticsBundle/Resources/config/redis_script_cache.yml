@@ -1,8 +1,0 @@
-parameters:
-    dekalee_adback_analytics.redis_script_cache.class: Dekalee\AdbackAnalytics\Driver\RedisScriptCache
-
-services:
-    dekalee_adback_analytics.script_cache:
-        class: '%dekalee_adback_analytics.redis_script_cache.class%'
-        arguments:
-            - '@dekalee_adback_analytics.cache'
