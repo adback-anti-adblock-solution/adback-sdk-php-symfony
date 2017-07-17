@@ -19,8 +19,8 @@ class AnalyticsRefreshTagCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('dekalee:adback-anayltics:refresh-tag')
-            ->setDescription('Refresh the adback tags')
+            ->setName('adback:api-client:refresh-tag')
+            ->setDescription('Refresh the adback tags: get urls and tags names from adback.co api')
         ;
     }
 
