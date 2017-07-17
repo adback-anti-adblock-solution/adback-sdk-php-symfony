@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('dekalee_adback_analytics');
+        $rootNode = $treeBuilder->root('adback_api_client');
 
         $supportedCacheTypes = ['redis', 'doctrine', 'config_file'];
 

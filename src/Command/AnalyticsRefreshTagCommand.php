@@ -32,6 +32,6 @@ class AnalyticsRefreshTagCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->getContainer()->get('dekalee_adback_analytics.query.script_url')->execute();
+        $this->getContainer()->get('adback_api_client.query.script_url')->execute();
     }
 }
