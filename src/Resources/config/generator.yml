@@ -1,18 +1,18 @@
 parameters:
-    dekalee_adback_analytics.generator.analytics.class: Adback\ApiClient\Generator\AnalyticsScriptGenerator
-    dekalee_adback_analytics.generator.message.class: Adback\ApiClient\Generator\MessageScriptGenerator
+    adback_api_client.generator.analytics.class: Adback\ApiClient\Generator\AnalyticsScriptGenerator
+    adback_api_client.generator.message.class: Adback\ApiClient\Generator\MessageScriptGenerator
     dekalee_adback_autopromo_banner.generator.message.class: Adback\ApiClient\Generator\AutopromoBannerScriptGenerator
 
 services:
-    dekalee_adback_analytics.generator.analytics:
-        class: '%dekalee_adback_analytics.generator.analytics.class%'
+    adback_api_client.generator.analytics:
+        class: '%adback_api_client.generator.analytics.class%'
         arguments:
-            - '@dekalee_adback_analytics.script_cache'
-    dekalee_adback_analytics.generator.message:
-        class: '%dekalee_adback_analytics.generator.message.class%'
+            - '@adback_api_client.script_cache'
+    adback_api_client.generator.message:
+        class: '%adback_api_client.generator.message.class%'
         arguments:
-            - '@dekalee_adback_analytics.script_cache'
+            - '@adback_api_client.script_cache'
     dekalee_adback_autopromo_banner.generator.message:
         class: '%dekalee_adback_autopromo_banner.generator.message.class%'
         arguments:
-            - '@dekalee_adback_analytics.script_cache'
+            - '@adback_api_client.script_cache'

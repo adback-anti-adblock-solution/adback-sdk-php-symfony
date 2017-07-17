@@ -1,16 +1,16 @@
 parameters:
-    dekalee_adback_analytics.config_file_script_cache.class: Adback\ApiClientBundle\Driver\ConfigFileScriptCache
-    dekalee_adback_analytics.cache_warmer.config_file.class: Adback\ApiClientBundle\CacheWarmer\ConfigFileCacheWarmer
+    adback_api_client.config_file_script_cache.class: Adback\ApiClientBundle\Driver\ConfigFileScriptCache
+    adback_api_client.cache_warmer.config_file.class: Adback\ApiClientBundle\CacheWarmer\ConfigFileCacheWarmer
 
 services:
-    dekalee_adback_analytics.script_cache:
-        class: '%dekalee_adback_analytics.config_file_script_cache.class%'
+    adback_api_client.script_cache:
+        class: '%adback_api_client.config_file_script_cache.class%'
         arguments:
             - '%kernel.cache_dir%'
             - '%kernel.debug%'
-    dekalee_adback_analytics.cache_warmer.config_file:
-        class: '%dekalee_adback_analytics.cache_warmer.config_file.class%'
+    adback_api_client.cache_warmer.config_file:
+        class: '%adback_api_client.cache_warmer.config_file.class%'
         arguments:
-            - '@dekalee_adback_analytics.query.script_url'
+            - '@adback_api_client.query.script_url'
         tags:
             - { name: 'kernel.cache_warmer' }

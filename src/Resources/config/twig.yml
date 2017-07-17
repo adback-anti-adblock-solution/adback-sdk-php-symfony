@@ -1,12 +1,12 @@
 parameters:
-    dekalee_adback_analytics.extension.script.class: Adback\ApiClientBundle\Twig\ScriptExtension
+    adback_api_client.extension.script.class: Adback\ApiClientBundle\Twig\ScriptExtension
 
 services:
-    dekalee_adback_analytics.extension.script:
-        class: '%dekalee_adback_analytics.extension.script.class%'
+    adback_api_client.extension.script:
+        class: '%adback_api_client.extension.script.class%'
         arguments:
-            - '@dekalee_adback_analytics.generator.analytics'
-            - '@dekalee_adback_analytics.generator.message'
+            - '@adback_api_client.generator.analytics'
+            - '@adback_api_client.generator.message'
             - '@dekalee_adback_autopromo_banner.generator.message'
         tags:
             - { name: twig.extension }
