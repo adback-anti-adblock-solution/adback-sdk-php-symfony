@@ -23,6 +23,7 @@ class AdbackApiClientExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $cacheType = $config['cache_type'];
+        $generatorType = $config['generator_type'];
         $container->setParameter('adback_api_client.api.access_token', $config['access_token']);
         $container->setParameter('adback_api_client.api.api_url', $config['api_url']);
         $container->setParameter('adback_api_client.api.script_url', $config['script_url']);
@@ -37,7 +38,7 @@ class AdbackApiClientExtension extends Extension
         $loader->load('client.yml');
         $loader->load('query.yml');
         $loader->load($cacheType . '_script_cache.yml');
-        $loader->load('generator.yml');
+        $loader->load($generatorType . '_generator.yml');
         $loader->load('twig.yml');
     }
 }

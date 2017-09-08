@@ -21,6 +21,7 @@ class Configuration implements ConfigurationInterface
         $rootNode = $treeBuilder->root('adback_api_client');
 
         $supportedCacheTypes = ['redis', 'doctrine', 'config_file'];
+        $supportedGeneratorTypes = ['full', 'script'];
 
         $rootNode->children()
             ->scalarNode('access_token')->isRequired()->end()
@@ -34,6 +35,15 @@ class Configuration implements ConfigurationInterface
                 ->cannotBeOverwritten()
                 ->cannotBeEmpty()
                 ->defaultValue('redis')
+            ->end()
+            ->scalarNode('generator_type')
+                ->validate()
+                    ->ifNotInArray($supportedGeneratorTypes)
+                    ->thenInvalid('The driver %s is not supported. Please choose one of '.json_encode($supportedGeneratorTypes))
+                ->end()
+                ->cannotBeOverwritten()
+                ->cannotBeEmpty()
+                ->defaultValue('script')
             ->end()
             ->scalarNode('cache_service')->defaultValue('redis')->end()
             ->scalarNode('entity_manager')->defaultValue('doctrine.orm.entity_manager')->end()
