@@ -2,7 +2,7 @@
 
 namespace Adback\ApiClientBundle\Tests\Unit\CacheWarmer;
 
-use Adback\ApiClient\Query\ScriptUrlQuery;
+use Adback\ApiClient\Query\QueryInterface;
 use Adback\ApiClientBundle\CacheWarmer\ConfigFileCacheWarmer;
 use Phake;
 use Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface;
@@ -24,7 +24,7 @@ class ConfigFileCacheWarmerTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->query = Phake::mock(ScriptUrlQuery::CLASS);
+        $this->query = Phake::mock(QueryInterface::CLASS);
 
         $this->warmer = new ConfigFileCacheWarmer($this->query);
     }
