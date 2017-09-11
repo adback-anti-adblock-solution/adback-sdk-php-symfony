@@ -9,4 +9,3 @@ services:
             - '@adback_api_client.script_cache'
             - '%adback_api_client.api.access_token%'
             - '%adback_api_client.api.api_url%'
-            - '%adback_api_client.api.script_url%'
