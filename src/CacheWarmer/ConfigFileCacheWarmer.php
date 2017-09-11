@@ -2,7 +2,7 @@
 
 namespace Adback\ApiClientBundle\CacheWarmer;
 
-use Adback\ApiClient\Query\ScriptUrlQuery;
+use Adback\ApiClient\Query\QueryInterface;
 use Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface;
 
 /**
@@ -13,9 +13,9 @@ class ConfigFileCacheWarmer implements CacheWarmerInterface
     protected $query;
 
     /**
-     * @param ScriptUrlQuery $query
+     * @param QueryInterface $query
      */
-    public function __construct(ScriptUrlQuery $query)
+    public function __construct(QueryInterface $query)
     {
         $this->query = $query;
     }

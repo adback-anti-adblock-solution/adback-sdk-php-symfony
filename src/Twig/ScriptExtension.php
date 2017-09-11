@@ -2,10 +2,7 @@
 
 namespace Adback\ApiClientBundle\Twig;
 
-use Adback\ApiClient\Generator\AnalyticsScriptGenerator;
-use Adback\ApiClient\Generator\MessageScriptGenerator;
-use Adback\ApiClient\Generator\AutopromoBannerScriptGenerator;
-use Adback\ApiClient\Generator\ProductScriptGenerator;
+use Adback\ApiClient\Generator\ScriptGeneratorInterface;
 
 /**
  * Class ScriptExtension
@@ -18,16 +15,16 @@ class ScriptExtension extends \Twig_Extension
     protected $autopromoBannerGenerator;
 
     /**
-     * @param AnalyticsScriptGenerator       $analyticsScriptGenerator
-     * @param MessageScriptGenerator         $messageScriptGenerator
-     * @param AutopromoBannerScriptGenerator $autopromoBannerScriptGenerator
-     * @param ProductScriptGenerator         $productScriptGenerator
+     * @param ScriptGeneratorInterface $analyticsScriptGenerator
+     * @param ScriptGeneratorInterface $messageScriptGenerator
+     * @param ScriptGeneratorInterface $autopromoBannerScriptGenerator
+     * @param ScriptGeneratorInterface $productScriptGenerator
      */
     public function __construct(
-        AnalyticsScriptGenerator $analyticsScriptGenerator,
-        MessageScriptGenerator $messageScriptGenerator,
-        AutopromoBannerScriptGenerator $autopromoBannerScriptGenerator,
-        ProductScriptGenerator $productScriptGenerator
+        ScriptGeneratorInterface $analyticsScriptGenerator,
+        ScriptGeneratorInterface $messageScriptGenerator,
+        ScriptGeneratorInterface $autopromoBannerScriptGenerator,
+        ScriptGeneratorInterface $productScriptGenerator
     ) {
         $this->productGenerator = $productScriptGenerator;
         $this->messageGenerator = $messageScriptGenerator;
