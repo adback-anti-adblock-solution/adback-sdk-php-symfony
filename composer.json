@@ -3,7 +3,7 @@
     "description": "A bundle to use the AdBack ApiClient",
     "type": "bundle",
     "require": {
-        "symfony/framework-bundle": "~2.3|~3.0",
+        "symfony/framework-bundle": "~2.3|~3.0|^4.0",
         "adback/adback-sdk-php": "~2.2",
         "twig/twig": "*"
     },
