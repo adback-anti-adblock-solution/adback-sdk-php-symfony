@@ -12,7 +12,7 @@
         "phpunit/phpunit": "~5.4.0",
         "phake/phake": "~2.3"
     },
-    "license": "Apache-2.0",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Adback\\ApiClientBundle\\": "src"
