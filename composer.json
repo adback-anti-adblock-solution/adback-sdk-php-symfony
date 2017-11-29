@@ -1,7 +1,7 @@
 {
     "name": "adback/adback-sdk-php-symfony",
     "description": "A bundle to use the AdBack ApiClient",
-    "type": "bundle",
+    "type": "symfony-bundle",
     "require": {
         "symfony/framework-bundle": "~2.3|~3.0|^4.0",
         "adback/adback-sdk-php": "~2.2",
