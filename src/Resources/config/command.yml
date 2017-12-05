@@ -3,7 +3,7 @@ parameters:
 
 services:
     adback_api_client.command.refresh_tag:
-        class: '%adback_api_client.command.refresh_tag%'
+        class: '%adback_api_client.command.refresh_tag.class%'
         calls:
             - method: setContainer
               arguments:
