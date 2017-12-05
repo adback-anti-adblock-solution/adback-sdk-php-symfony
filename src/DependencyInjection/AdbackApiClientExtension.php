@@ -40,5 +40,6 @@ class AdbackApiClientExtension extends Extension
         $loader->load($cacheType . '_script_cache.yml');
         $loader->load($generatorType . '_generator.yml');
         $loader->load('twig.yml');
+        $loader->load('command.yml');
     }
 }

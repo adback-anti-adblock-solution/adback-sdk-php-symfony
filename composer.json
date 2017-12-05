@@ -20,7 +20,8 @@
     },
     "suggest": {
         "doctrine/orm": "Allows you to use doctrine to store the cache",
-        "symfony/config": "Allows you tu use the file cache"
+        "symfony/config": "Allows you to use the file cache",
+        "dekalee/nightly-task-bundle": "Allows you to run all your nightly task with one entry command"
     },
     "authors": [
         {
