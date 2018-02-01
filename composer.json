@@ -4,7 +4,7 @@
     "type": "symfony-bundle",
     "require": {
         "symfony/framework-bundle": "~2.3|~3.0|^4.0",
-        "adback/adback-sdk-php": "~2.2",
+        "adback/adback-sdk-php": "~2.3",
         "twig/twig": "*"
     },
     "require-dev": {

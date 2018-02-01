@@ -3,6 +3,7 @@ parameters:
     adback_api_client.generator.message.class: Adback\ApiClient\Generator\MessageCodeGenerator
     adback_api_client.generator.autopromo_banner.class: Adback\ApiClient\Generator\AutopromoBannerCodeGenerator
     adback_api_client.generator.product.class: Adback\ApiClient\Generator\ProductCodeGenerator
+    adback_api_client.generator.iab.class: Adback\ApiClient\Generator\IabBannerCodeGenerator
 
 services:
     adback_api_client.generator.analytics:
@@ -19,5 +20,10 @@ services:
             - '@adback_api_client.script_cache'
     adback_api_client.generator.product:
         class: '%adback_api_client.generator.product.class%'
+        arguments:
+            - '@adback_api_client.script_cache'
+
+    adback_api_client.generator.iab:
+        class: '%adback_api_client.generator.iab.class%'
         arguments:
             - '@adback_api_client.script_cache'
