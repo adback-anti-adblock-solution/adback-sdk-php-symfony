@@ -8,6 +8,7 @@ services:
             - '@adback_api_client.generator.analytics'
             - '@adback_api_client.generator.message'
             - '@adback_api_client.generator.autopromo_banner'
+            - '@adback_api_client.generator.iab'
             - '@adback_api_client.generator.product'
         tags:
             - { name: twig.extension }
