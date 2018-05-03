@@ -10,19 +10,29 @@ services:
         class: '%adback_api_client.generator.analytics.class%'
         arguments:
             - '@adback_api_client.script_cache'
+        tags:
+            - { name: adback_api.client.generator.strategy }
     adback_api_client.generator.message:
         class: '%adback_api_client.generator.message.class%'
         arguments:
             - '@adback_api_client.script_cache'
+        tags:
+            - { name: adback_api.client.generator.strategy }
     adback_api_client.generator.autopromo_banner:
         class: '%adback_api_client.generator.autopromo_banner.class%'
         arguments:
             - '@adback_api_client.script_cache'
+        tags:
+            - { name: adback_api.client.generator.strategy }
     adback_api_client.generator.product:
         class: '%adback_api_client.generator.product.class%'
         arguments:
             - '@adback_api_client.script_cache'
+        tags:
+            - { name: adback_api.client.generator.strategy }
     adback_api_client.generator.iab:
         class: '%adback_api_client.generator.iab.class%'
         arguments:
             - '@adback_api_client.script_cache'
+        tags:
+            - { name: adback_api.client.generator.strategy }
