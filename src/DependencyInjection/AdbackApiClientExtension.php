@@ -41,5 +41,6 @@ class AdbackApiClientExtension extends Extension
         $loader->load($generatorType . '_generator.yml');
         $loader->load('twig.yml');
         $loader->load('command.yml');
+        $loader->load('global_generator.yml');
     }
 }

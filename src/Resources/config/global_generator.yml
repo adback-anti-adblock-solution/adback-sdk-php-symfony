@@ -1,0 +1,8 @@
+parameters:
+    adback_api_client.generator.global.class: Adback\ApiClientBundle\Generator\GlobalGenerator
+
+services:
+    adback_api_client.generator.global:
+        class: '%adback_api_client.generator.global.class%'
+        arguments:
+            - '@adback_api_client.script_cache'
