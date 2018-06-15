@@ -68,7 +68,7 @@ class DoctrineScriptCache extends SqlScriptCache implements ScriptCacheInterface
     {
         $element = $this->repository->findOneByKey($key);
 
-        if (!$element instanceof ApiCache) {
+        if ($element instanceof ApiCache) {
             $this->entityManager->remove($element);
             $this->entityManager->flush($element);
         }
