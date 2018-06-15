@@ -15,7 +15,7 @@
 
     <testsuites>
         <testsuite name="unit">
-            <directory>src/*/Tests/Unit</directory>
+            <directory>src/Tests/Unit</directory>
         </testsuite>
     </testsuites>
 
@@ -25,6 +25,9 @@
         </whitelist>
         <blacklist>
             <directory suffix=".php">./vendor/</directory>
+        </blacklist>
+        <blacklist>
+            <directory suffix=".php">src/Tests</directory>
         </blacklist>
     </filter>
 
