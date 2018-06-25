@@ -31,7 +31,7 @@ class ApiCache
     /**
      * @var string
      *
-     * @ORM\Column(name="value", type="string", length=255)
+     * @ORM\Column(name="value", type="text")
      */
     private $value;
 
