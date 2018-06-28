@@ -27,7 +27,7 @@ class AdbackApiClientExtension extends Extension
         $container->setParameter('adback_api_client.api.access_token', $config['access_token']);
         $container->setParameter('adback_api_client.api.api_url', $config['api_url']);
         $container->setParameter('adback_api_client.api.script_url', $config['script_url']);
-        if ('redis' === $cacheType && array_key_exists('cache_service', $config)) {
+        if (('redis' === $cacheType || 'predis' === $cacheType) && array_key_exists('cache_service', $config)) {
             $container->setAlias('adback_api_client.cache', $config['cache_service']);
         }
         if ('doctrine' == $cacheType && array_key_exists('entity_manager', $config)) {
