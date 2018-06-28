@@ -1,0 +1,8 @@
+parameters:
+    adback_api_client.predis_script_cache.class: Adback\ApiClient\Driver\PredisScriptCache
+
+services:
+    adback_api_client.script_cache:
+        class: '%adback_api_client.predis_script_cache.class%'
+        arguments:
+            - '@adback_api_client.cache'
