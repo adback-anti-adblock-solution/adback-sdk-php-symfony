@@ -47,6 +47,7 @@ class Configuration implements ConfigurationInterface
             ->end()
             ->scalarNode('cache_service')->defaultValue('redis')->end()
             ->scalarNode('entity_manager')->defaultValue('doctrine.orm.entity_manager')->end()
+            ->scalarNode('key_prefix')->defaultValue('')->info('This key is used if multiple website access the same database')->end()
         ->end();
 
         return $treeBuilder;

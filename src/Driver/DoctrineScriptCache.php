@@ -13,15 +13,18 @@ use Doctrine\Common\Persistence\ObjectManager;
  */
 class DoctrineScriptCache extends SqlScriptCache implements ScriptCacheInterface
 {
+    protected $prefix;
     protected $repository;
     protected $entityManager;
 
     /**
      * @param ApiCacheRepository $repository
      * @param ObjectManager      $manager
+     * @param string             $prefix
      */
-    public function __construct(ApiCacheRepository $repository, ObjectManager $manager)
+    public function __construct(ApiCacheRepository $repository, ObjectManager $manager, $prefix = '')
     {
+        $this->prefix = $prefix;
         $this->repository = $repository;
         $this->entityManager = $manager;
     }
@@ -33,6 +36,8 @@ class DoctrineScriptCache extends SqlScriptCache implements ScriptCacheInterface
      */
     protected function get($key)
     {
+        $key = $this->completeKey($key);
+
         $element = $this->repository->findOneByKey($key);
 
         if ($element instanceof ApiCache) {
@@ -48,6 +53,8 @@ class DoctrineScriptCache extends SqlScriptCache implements ScriptCacheInterface
      */
     protected function set($key, $value)
     {
+        $key = $this->completeKey($key);
+
         $element = $this->repository->findOneByKey($key);
 
         if (!$element instanceof ApiCache) {
@@ -72,5 +79,19 @@ class DoctrineScriptCache extends SqlScriptCache implements ScriptCacheInterface
             $this->entityManager->remove($element);
             $this->entityManager->flush($element);
         }
+    }
+
+    /**
+     * @param string $key
+     *
+     * @return string
+     */
+    protected function completeKey($key)
+    {
+        if ('' !== $this->prefix) {
+            $key = $this->prefix . '_' . $key;
+        }
+
+        return $key;
     }
 }
