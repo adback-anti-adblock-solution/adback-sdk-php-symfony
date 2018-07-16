@@ -9,6 +9,7 @@ services:
         arguments:
             - '@adback_api_client.repository.api_cache'
             - '@adback_api_client.orm.entity_manager'
+            - '%adback_api_client.key.prefix%'
     adback_api_client.repository.api_cache:
         class: '%adback_api_client.repository.api_cache.class%'
         factory: ['@adback_api_client.orm.entity_manager', getRepository]
