@@ -4,10 +4,8 @@ parameters:
 services:
     adback_api_client.command.refresh_tag:
         class: '%adback_api_client.command.refresh_tag.class%'
-        calls:
-            - method: setContainer
-              arguments:
-                  - '@service_container'
+        arguments:
+            - '@adback_api_client.query.script_url'
         tags:
             - { name: console.command }
             - { name: dekalee_nightly.task.strategy, priority: 100 }
