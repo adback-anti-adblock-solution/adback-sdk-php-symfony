@@ -2,17 +2,27 @@
 
 namespace Adback\ApiClientBundle\Command;
 
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
-use Symfony\Component\Console\Input\InputArgument;
+use Adback\ApiClient\Query\QueryInterface;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Class AnalyticsRefreshTagCommand
  */
-class AnalyticsRefreshTagCommand extends ContainerAwareCommand
+class AnalyticsRefreshTagCommand extends Command
 {
+    protected $query;
+
+    /**
+     * @param QueryInterface $query
+     */
+    public function __construct(QueryInterface $query)
+    {
+        parent::__construct();
+        $this->query = $query;
+    }
+
     /**
      * Configure the command
      */
@@ -32,6 +42,6 @@ class AnalyticsRefreshTagCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->getContainer()->get('adback_api_client.query.script_url')->execute();
+        $this->query->execute();
     }
 }
