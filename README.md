@@ -45,7 +45,7 @@ Then follow the paragraph linked to the type of cache you have choosen :
 
 #### Redis
 
-In the `config/packages/adback_sdk_php.yaml` you could add the following configuration :
+In the `config/packages/adback_sdk_php.yaml` you should add the following configuration :
 
 ```yaml
     cache_type: redis
@@ -56,7 +56,7 @@ In the `config/packages/adback_sdk_php.yaml` you could add the following configu
 
 #### Doctrine
 
-In the `config/packages/adback_sdk_php.yaml` you could add the following configuration :
+In the `config/packages/adback_sdk_php.yaml` you should add the following configuration :
 
 ```yaml
     cache_type: doctrine
@@ -82,7 +82,7 @@ Then follow the paragraph linked to the type of cache you have choosen :
 
 #### Redis
 
-In the `app/config/config.yml` you could add the following configuration :
+In the `app/config/config.yml` you should add the following configuration :
 
 ```yaml
     adback_api_client:
@@ -94,7 +94,7 @@ In the `app/config/config.yml` you could add the following configuration :
 
 #### Doctrine
 
-In the `app/config/config.yml` you could add the following configuration :
+In the `app/config/config.yml` you should add the following configuration :
 
 ```yaml
     adback_api_client:
@@ -118,7 +118,7 @@ This command will call our api and store the response in the cache type you have
 
 ### Add the script to your pages
 
-At the bottom of your webpages, you could add the script twig generation function :
+At the bottom of your webpages, you should add the script twig generation function :
 
 ```twig
     {{ adback_generate_scripts() }}
