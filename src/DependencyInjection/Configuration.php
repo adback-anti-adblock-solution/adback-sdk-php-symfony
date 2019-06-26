@@ -20,7 +20,7 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('adback_api_client');
 
-        $supportedCacheTypes = ['redis', 'doctrine', 'config_file', 'predis'];
+        $supportedCacheTypes = ['redis', 'doctrine', 'config_file', 'predis', 'custom'];
         $supportedGeneratorTypes = ['full', 'script'];
 
         $rootNode->children()
