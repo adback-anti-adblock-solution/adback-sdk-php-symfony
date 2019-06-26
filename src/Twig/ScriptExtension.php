@@ -63,4 +63,14 @@ class ScriptExtension extends \Twig_Extension
             new \Twig_SimpleFunction('adback_generate_product_script', [$this, 'generateProductScript'], ['is_safe' => ['html']]),
         ];
     }
+
+    /**
+     * Returns the name of the extension.
+     *
+     * @return string The extension name
+     */
+    public function getName()
+    {
+        return 'adback_sdk_symfony';
+    }
 }

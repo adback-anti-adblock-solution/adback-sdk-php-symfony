@@ -67,6 +67,19 @@ In the `config/packages/adback_sdk_php.yaml` you should add the following config
 
 Do not forget to create the table linked to the AdBack sdk.
 
+#### Custom
+
+If you want to write your own cache driver, you should create a class that implements
+`Adback\ApiClient\Driver\ScriptCacheInterface` and name this service `adback_api_client.script_cache`.
+
+In the `config/packages/adback_sdk_php.yaml` you should add the following configuration :
+
+```yaml
+    cache_type: custom
+```
+
+If the service is missing, an error will be issued by the Symfony DIC when the service is being used.
+
 ### Symfony < 4
 
 In your `app/config/config.yml` file, you should add the following lines :
@@ -105,6 +118,21 @@ In the `app/config/config.yml` you should add the following configuration :
 `doctrine.orm.entity_manager` is the name of the doctrine connection you are using to store the data.
 
 Do not forget to create the table linked to the AdBack sdk.
+
+
+#### Custom
+
+If you want to write your own cache driver, you should create a class that implements
+`Adback\ApiClient\Driver\ScriptCacheInterface` and name this service `adback_api_client.script_cache`.
+
+In the `app/config/config.yml` you should add the following configuration :
+
+```yaml
+    adback_api_client:
+        cache_type: custom
+```
+
+If the service is missing, an error will be issued by the Symfony DIC when the service is being used
 
 Usage
 -----

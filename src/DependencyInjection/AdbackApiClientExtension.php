@@ -38,7 +38,9 @@ class AdbackApiClientExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('client.yml');
         $loader->load($generatorType . '_query.yml');
-        $loader->load($cacheType . '_script_cache.yml');
+        if ('custom' !== $cacheType) {
+            $loader->load($cacheType . '_script_cache.yml');
+        }
         $loader->load($generatorType . '_generator.yml');
         $loader->load('twig.yml');
         $loader->load('command.yml');
