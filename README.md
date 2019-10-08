@@ -134,6 +134,24 @@ In the `app/config/config.yml` you should add the following configuration :
 
 If the service is missing, an error will be issued by the Symfony DIC when the service is being used
 
+### Script Type
+
+There is two possibilities for the script you could get.
+
+#### Small scripts
+
+This configuration will only load the AdBack script from an external url.
+
+This usage is good for a quick start.
+
+### Full scripts
+
+This configuration will load our full script or bootscrap script.
+
+This will allow us to deliver a script which is more flexible when the blocking in place are harder.
+
+This solution is recommanded for an advanced usage.
+
 Usage
 -----
 
